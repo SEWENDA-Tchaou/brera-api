@@ -16,6 +16,9 @@ app.use(cors(
     }
 ));
 app.use(express.static('public'))
+app.get('/', (req, res) => {
+  res.send('brea api!')
+})
 //file
 const storage = multer.diskStorage({
     destination: (req, file, cb) =>{
