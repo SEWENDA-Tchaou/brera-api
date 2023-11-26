@@ -47,14 +47,14 @@ app.get('/uploadimage', (req, res)=>{
 })
  
 const db = mysql.createConnection({
-    // host: 'localhost',
-    // user: 'root',
-    // password: '',
-    // database: 'render_brera'
-    host: process.env.DB_HOSTNAME,
-    user: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DBNAME
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'render_brera'
+    // host: process.env.DB_HOSTNAME,
+    // user: process.env.DB_USERNAME,
+    // password: process.env.DB_PASSWORD,
+    // database: process.env.DB_DBNAME
 })
 
 db.connect(function(err) {
