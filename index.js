@@ -16,6 +16,9 @@ app.use(cors(
     }
 ));
 app.use(express.static('public'))
+app.get('/', (req, res) => {
+    res.send('brera api!')
+  })
 //file
 const storage = multer.diskStorage({
     destination: (req, file, cb) =>{
@@ -47,14 +50,14 @@ app.get('/uploadimage', (req, res)=>{
 })
  
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'render_brera'
-    // host: process.env.DB_HOSTNAME,
-    // user: process.env.DB_USERNAME,
-    // password: process.env.DB_PASSWORD,
-    // database: process.env.DB_DBNAME
+    // host: 'localhost',
+    // user: 'root',
+    // password: '',
+    // database: 'render_brera'
+    host: process.env.DB_HOSTNAME,
+    user: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DBNAME
 })
 
 db.connect(function(err) {
