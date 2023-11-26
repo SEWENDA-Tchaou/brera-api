@@ -16,9 +16,6 @@ app.use(cors(
     }
 ));
 app.use(express.static('public'))
-app.get('/', (req, res) => {
-  res.send('brea api!')
-})
 //file
 const storage = multer.diskStorage({
     destination: (req, file, cb) =>{
@@ -68,7 +65,7 @@ db.connect(function(err) {
     }
 })
 
-app.get('/', (req, res)=>{
+app.get('/afficheConseil', (req, res)=>{
     const sql = "SELECT * FROM conseilbrera";
     db.query(sql, (err, data)=>{
         if(err) return res.json(err);
